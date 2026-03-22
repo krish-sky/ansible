@@ -5,7 +5,8 @@
     COURSE: "DevOps with AWS"
     DURATION: "140HRS"
     TRAINER: "Krishna"
-    tasks:
-    - name: print variable
-      anisble.builtin.debug:
-        msg: "Coruse is : {{ COURSE }}, {{ TRAINER }}"
+    
+  tasks:
+   - name: print variable
+     anisble.builtin.debug:
+     msg: "Coruse is : {{ COURSE }}, {{ TRAINER }}"
