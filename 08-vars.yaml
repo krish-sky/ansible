@@ -1,0 +1,10 @@
+- name: play 
+  hosts: local
+  connection: local
+  
+  tasks:
+   - name: print variable
+     vars: 
+      COURSE: "DevOps with azure"
+     ansible.builtin.debug:
+      msg: "Coruse is : {{ COURSE }}`"
