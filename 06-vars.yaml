@@ -1,0 +1,12 @@
+- name: play 
+  hosts: local
+  connection: local
+  vars_files:
+    course.yaml
+    
+  tasks:
+   - name: print variable
+     vars: 
+      COURSE: "DevOps with azure"
+     ansible.builtin.debug:
+      msg: "Coruse is : {{ COURSE }}, {{ TRAINER }}"
