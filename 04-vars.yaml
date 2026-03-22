@@ -1,0 +1,11 @@
+- name: play 
+  hosts: local
+  connection: local
+  vars: 
+    COURSE: "DevOps with AWS"
+    DURATION: "140HRS"
+    TRAINER: "Krishna"
+    tasks:
+    - name: print variable
+      anisble.builtin.debug:
+      msg: "Coruse is : {{ COURSE }}, {{ TRAINDER }}"
