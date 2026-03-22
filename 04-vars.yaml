@@ -9,4 +9,4 @@
   tasks:
    - name: print variable
      ansible.builtin.debug:
-     msg: "Coruse is : {{ COURSE }}, {{ TRAINER }}"
+      msg: "Coruse is : {{ COURSE }}, {{ TRAINER }}"
