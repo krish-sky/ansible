@@ -10,4 +10,4 @@
     ansible.builtin.package:
       name: nginx
       state: start
-      enabled: ture
+      enabled: yes
