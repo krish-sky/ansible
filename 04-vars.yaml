@@ -8,5 +8,5 @@
     
   tasks:
    - name: print variable
-     anisble.builtin.debug:
+     ansible.builtin.debug:
      msg: "Coruse is : {{ COURSE }}, {{ TRAINER }}"
