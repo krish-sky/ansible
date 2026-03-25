@@ -2,8 +2,8 @@
   hosts: local
   connection: local
 
-  vars:
-    NAME: "Ansible from Play"
+  # vars:
+  #   NAME: "Ansible from Play"
 
   vars_files:
   - course.yaml
