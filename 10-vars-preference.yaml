@@ -8,10 +8,10 @@
   vars_files:
   - course.yaml
 
-  vars_prompt: 
-  - name: NAME
-    prompt: "Please enter your name"
-    private: false
+  # vars_prompt: 
+  # - name: NAME
+  #   prompt: "Please enter your name"
+  #   private: false
   tasks:
   - name: print name
     #   NAME: "Ansible from TASK"
