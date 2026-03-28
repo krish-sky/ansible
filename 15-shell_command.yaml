@@ -10,3 +10,8 @@
   - name: print output 
     ansible.builtin.debug:
       msg: "{{ users_output }}"
+
+  - name: command module test
+    ansible.builtin.shell: ls -ltr > files.txt
+    register: files_oupt
+    
