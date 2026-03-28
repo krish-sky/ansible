@@ -1,5 +1,5 @@
 - name: demo on filter
-  tasks: local
+  hosts: local
   connection: local
   tasks:
   - name: greeting
