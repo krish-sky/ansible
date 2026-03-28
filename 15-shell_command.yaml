@@ -14,4 +14,7 @@
   - name: command module test
     ansible.builtin.shell: ls -ltr > files.txt
     register: files_oupt
-    
+
+    - name: print output 
+    ansible.builtin.debug:
+      msg: "{{ files_oupt }}"
