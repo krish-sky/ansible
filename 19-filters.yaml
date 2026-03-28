@@ -1,0 +1,7 @@
+- name: demo on filter
+  tasks: local
+  connection: local
+  tasks:
+  - name: greeting
+    ansible.builtin.debug:
+      msg: "Hi krish, {{ GREETING }}"
