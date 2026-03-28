@@ -1,0 +1,7 @@
+- name: ansible command vs shell command  
+  hosts: local
+  connection: local
+  tasks: 
+  - name: command madual test
+    ansible.builtin.debug: cat /etc/passwd | grep root
+    register: users_output
