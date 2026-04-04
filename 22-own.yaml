@@ -1,6 +1,8 @@
-- name: test on ping
+- name: installing nginx
   hosts: localhost
   connection: local
   tasks:
-    - name: ping test
-      ansible.builtin.ping:
+    - name: nginx installing
+      ansible.builtin.package:
+        name: nginx
+        state: present
