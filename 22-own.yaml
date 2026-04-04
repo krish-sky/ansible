@@ -1,5 +1,6 @@
 - name: checking ping
-  hosts: ansible
+  hosts: local
+  connection: local
   tasks:
   - name: checking connection to ansible server
     ansible.builtin.ping:
