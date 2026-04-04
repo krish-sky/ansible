@@ -13,5 +13,3 @@
     - name: Print Devops message
       ansible.builtin.debug:
         msg: "I will master DevOps"
-    
-    
