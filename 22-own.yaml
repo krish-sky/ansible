@@ -1,15 +1,7 @@
-- name: print special message
+- name: test on ping
   hosts: localhost
   connection: local
   tasks:
-    - name: print Ansible message
-      ansible.builtin.debug:
-        msg: "Hello Ansible"
-    
-    - name: Print Yaml message
-      ansible.builtin.debug:
-        msg: "Learning YAML structure"
-    
-    - name: Print Devops message
-      ansible.builtin.debug:
-        msg: "I will master DevOps"
+    - name: ping test
+      ansible.builtin.ping:
+      
