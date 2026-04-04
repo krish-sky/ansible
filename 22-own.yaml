@@ -1,22 +1,9 @@
-- name: checking ping
+- name: installing nginx
   hosts: local
   connection: local
+  become: yes
   tasks:
-  - name: checking connection to ansible server
-    ansible.builtin.ping:
-    register: ping_output
-
-  - name: print the success message
-    ansible.builtin.debug:
-      msg: "Connection successful"
-    when: ping_output is succeeded
-
-  - name: print failure message
-    ansible.builtin.debug:
-      msg: "Connection failed"
-    when: ping_output is failed
-
-  - name: printing result
-    ansible.builtin.debug:
-      msg: "Ping result: {{ ping_output.ping }}"
-  
+    - name: nginx package
+      ansible.builtin.package:
+        name: nginx
+        state: present
