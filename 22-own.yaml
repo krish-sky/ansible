@@ -16,6 +16,6 @@
     when: ping_output is failed
 
   - name: printing result
-    ansible,builtin.debug:
+    ansible.builtin.debug:
       msg: "Ping result: {{ ping_output.ping }}"
   
