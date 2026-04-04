@@ -1,9 +1,17 @@
-- name: installing nginx
-  hosts: local
+- name: print special message
+  hosts: localhost
   connection: local
-  become: yes
   tasks:
-    - name: nginx package
-      ansible.builtin.package:
-        name: nginx
-        state: present
+    - name: print Ansible message
+      ansible.builtin.debug:
+        msg: "Hello Ansible"
+    
+    - name: Print Yaml message
+      ansible.builtin.debug:
+        msg: "Learning YAML structure"
+    
+    - name: Print Devops message
+      ansible.builtin.debug:
+        msg: "I will master DevOps"
+    
+    
