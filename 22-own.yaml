@@ -1,14 +1,15 @@
-- name: removing nginx
+- name: Installing package
   hosts: localhost
   connection: local
-  become: yes
-  tasks:
-    - name: installing nginx package
-      ansible.builtin.package:
-        name: nginx
-        state: present
+  vars:
+    app_name: nginx
+  tasks: 
+    - name: Printing package name
+      ansible.builtin.debug:
+        msg: "Installing {{ app_name }}"
     
-    - name: removing nginx package
-      ansible.builtin.package:
-        name: nginx
-        state: absent 
+    - name: Printing task level variable
+      vars:
+        app_name: httpd
+      ansible.builtin.debug:
+        msg: "Installing {{ app_name }}"
