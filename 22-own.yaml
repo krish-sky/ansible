@@ -3,7 +3,7 @@
   connection: local
   
   vars:
-    env: dev
+    env: prod
   tasks:
     - name: checking when condition
       ansible.builtin.debug:
