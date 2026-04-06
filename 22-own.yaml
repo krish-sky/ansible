@@ -1,13 +1,14 @@
-- name: demo on condition
-  hosts: localhost
-  connection: local
-  
-  vars:
-    env: prod
-  tasks:
-    - name: checking when condition
-      ansible.builtin.debug:
-        msg: "Running in DEV environment"
-      when: env=="dev"
+  - name: demo on condition
+    hosts: localhost
+    connection: local
+    
+    vars:
+      env: dev
+      app: web
+    tasks:
+      - name: checking when condition
+        ansible.builtin.debug:
+          msg: "Running in DEV environment"
+        when: env=="dev" and app=="web"
 
-  
+    
