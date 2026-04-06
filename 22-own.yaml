@@ -1,15 +1,7 @@
 - name: Installing package
   hosts: localhost
   connection: local
-  vars:
-    app_name: nginx
   tasks: 
-    - name: Printing package name
-      ansible.builtin.debug:
-        msg: "Installing {{ app_name }}"
-    
-    - name: Printing task level variable
-      vars:
-        app_name: httpd
+    - name: Printing app name
       ansible.builtin.debug:
         msg: "Installing {{ app_name }}"
