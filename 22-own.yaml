@@ -3,5 +3,5 @@
   tasks:
     - name: checking condition on when
       ansible.builtin.debug:
-        msg: "Running from inventory variable"
-      when: env == "dev"
+        msg: "This runs only on WEB group"
+      when: "'web' in group_names"
