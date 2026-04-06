@@ -1,6 +1,16 @@
-- name: Connection test
+- name: Combined test
   hosts: web
+
+  vars:
+    app_name: httpd
+
   tasks:
-    - name: Test Connection
+    - name: Task 1
       ansible.builtin.debug:
-        msg: "Running on {{ inventory_hostname }}"
+        msg: "Installing {{ app_name }}"
+
+    - name: Task 2
+      vars:
+        app_name: tomcat
+      ansible.builtin.debug:
+        msg: "Installing {{ app_name }}"
