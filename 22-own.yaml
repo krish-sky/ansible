@@ -3,12 +3,11 @@
     connection: local
     
     vars:
-      env: dev
+      env: prod
       app: web
     tasks:
       - name: checking when condition
         ansible.builtin.debug:
-          msg: "Running in DEV environment"
-        when: env=="dev" and app=="web"
-
+          msg: "Deploy allowed"
+        when: env == "dev" or app == "web"
     
