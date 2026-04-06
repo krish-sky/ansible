@@ -1,11 +1,7 @@
-  - name: demo on condition
-    hosts: localhost
-    connection: local
-    
-    vars:
-      install_package: false
-    tasks:
-      - name: run only if install_package is true
-        ansible.builtin.debug:
-          msg: "Installing package"
-        when: install_package
+- name: condition with inventory
+  hosts: web
+  tasks:
+    - name: checking condition on when
+      ansible.builtin.debug:
+        msg: "Running from inventory variable"
+      when: env == "dev"
