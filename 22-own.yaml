@@ -8,5 +8,6 @@
     - name: checking when condition
       ansible.builtin.debug:
         msg: "Running in DEV environment"
-      when: env==dev
+      when: env=="dev"
+
   
