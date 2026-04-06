@@ -1,5 +1,5 @@
 - name: condition with inventory
-  hosts: web
+  hosts: all
   tasks:
     - name: checking condition on when
       ansible.builtin.debug:
