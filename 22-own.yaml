@@ -9,7 +9,8 @@
         ansible.builtin.debug:
           msg: "Installing package"
 
+
       - name: checking when condition
         ansible.builtin.package:
-        when: install_package
+        when: "{{install_package}}"
         
