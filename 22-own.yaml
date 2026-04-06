@@ -12,5 +12,7 @@
 
       - name: checking when condition
         ansible.builtin.package:
-        when: "{{install_package}}"
+          name: nginx
+          state: present
+        when: install_package
         
