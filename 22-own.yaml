@@ -1,16 +1,12 @@
-- name: Combined test
-  hosts: web
-
+- name: demo on condition
+  hosts: localhost
+  connection: local
+  
   vars:
-    app_name: httpd
-
+    env: dev
   tasks:
-    - name: Task 1
+    - name: checking when condition
       ansible.builtin.debug:
-        msg: "Installing {{ app_name }}"
-
-    - name: Task 2
-      vars:
-        app_name: tomcat
-      ansible.builtin.debug:
-        msg: "Installing {{ app_name }}"
+        msg: "Running in DEV environment"
+      when: env==dev
+  
