@@ -7,7 +7,6 @@
     tasks:
       - name: checking when condition
         ansible.builtin.package:
-        ansible.builtin.debug:
-          msg: "Installing package"
+        msg: "Installing package"
         when: install_package
         
