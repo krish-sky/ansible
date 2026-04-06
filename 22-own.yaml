@@ -1,6 +1,6 @@
-- name: Installing package
+- name: Test connection behavior
   hosts: web
-  tasks: 
-    - name: Printing app name
+  tasks:
+    - name: Test
       ansible.builtin.debug:
-        msg: "Installing {{ app_name }}"
+        msg: "Hello"
