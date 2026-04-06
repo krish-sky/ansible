@@ -3,7 +3,7 @@
     connection: local
     
     vars:
-      install_package: true
+      install_package: false
     tasks:
       - name: run only if install_package is true
         ansible.builtin.debug:
