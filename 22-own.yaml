@@ -3,11 +3,11 @@
     connection: local
     
     vars:
-      env: prod
-      app: web
+      install_package: true
     tasks:
       - name: checking when condition
+        ansible.builtin.package:
         ansible.builtin.debug:
-          msg: "Deploy allowed"
-        when: env == "dev" or app == "web"
-    
+          msg: "Installing package"
+        when: install_package
+        
