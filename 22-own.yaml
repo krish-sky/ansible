@@ -1,6 +1,6 @@
-- name: Test connection behavior
+- name: Connection test
   hosts: web
   tasks:
-    - name: Test
+    - name: Test Connection
       ansible.builtin.debug:
-        msg: "Hello"
+        msg: "Running on {{ inventory_hostname }}"
