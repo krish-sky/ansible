@@ -1,6 +1,5 @@
 - name: Installing package
-  hosts: localhost
-  connection: local
+  hosts: web
   tasks: 
     - name: Printing app name
       ansible.builtin.debug:
