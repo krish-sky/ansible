@@ -3,5 +3,10 @@
   tasks:
     - name: checking condition on when
       ansible.builtin.debug:
-        msg: "Deploy only DEV WEB servers"
-      when: "'web' in group_names and env == 'dev'"
+        msg: "Configuring WEB server"
+      when: "'web' in group_names"
+
+    - name: checking condition on when
+      ansible.builtin.debug:
+        msg: "Configuring DB server"
+      when: "'db' in group_names"
