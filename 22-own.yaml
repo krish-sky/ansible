@@ -4,4 +4,4 @@
     - name: checking condition on when
       ansible.builtin.debug:
         msg: "This runs only on DB group"
-      when: "'db' in group_names"
+      when: "'web' not in group_names"
