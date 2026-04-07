@@ -1,8 +1,7 @@
 - name: condition with inventory
   hosts: all
-  
   tasks:
     - name: checking condition on when
       ansible.builtin.debug:
-        msg: "This runs only on WEB group"
-      when: "'web' in group_names"
+        msg: "This runs only on DB group"
+      when: "'db' in group_names"
