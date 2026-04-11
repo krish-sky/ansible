@@ -4,10 +4,11 @@
   gather_facts: no
 
   tasks: 
-    - name: print items
-      ansible.builtin.debug:
-        msg: "{{ item }}"
+    - name: installing packages
+      ansible.builtin.package:
+        name: '{{ item }}'
+        state: present
+      
       loop:
-        - apple 
-        - banana
-        - mango
+        - git
+        - nginx
