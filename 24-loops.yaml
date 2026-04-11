@@ -8,7 +8,7 @@
       - curl
   
   tasks: 
-    - name: installing package
+    - name: print package
       ansible.builtit.debug:
         msg: "Installing {{ item }}"
       loop: "{{ package }}"
