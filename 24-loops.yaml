@@ -12,4 +12,4 @@
         - git
         - nginx
         - curl
-      when: item  == "nginx"
+      when: item  == "nginx" or item == "curl"
