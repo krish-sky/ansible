@@ -1,0 +1,13 @@
+- name: loops concept
+  hosts: local
+  connection: local
+  gather_facts: no
+
+  tasks: 
+    - name: print items
+      ansible.builtin.debug:
+        msg: "{{ item }}"
+      loop:
+        - apple 
+        - banana
+        - mango

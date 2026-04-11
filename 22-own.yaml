@@ -1,13 +1,27 @@
-- name: condition with inventory
+- name: test 31
   hosts: all
-  tasks:
-    - name: web configuration block
-      block:
-        - name: task 1
-          ansible.builtin.debug:
-            msg: "Installing WEB packages"
+  become: yes
+  tasks: 
+    - name: installing start nginx 
+      block: 
+        - name: install nginx 
+          ansible.builtin.package:
+            name: nginx
+            state: present
+          
+        - name: start nginx
+          ansible.builtin.service:
+            name: nginx
+            state: started
       
-        - name: task 2
-          ansible.builtin.debug:
-            msg: "Starting WEB service"
-      when: "'web' in group_names"
+      when: "'web' in group_names and env == 'dev'"
+
+    - name: installing mysql
+      block:
+        - name: installing mysql
+          ansible.builtin.package:
+            name: mysql 
+            state: present
+      
+      when: "'db' in group_names and env == 'prod'"
+      
