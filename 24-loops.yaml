@@ -4,4 +4,12 @@
   become: yes
 
   tasks:
-    - name: 
+    - name: installing the package
+      ansible.builtin.package:
+        name: '{{ item }}'
+        state: present
+      
+      loop:
+        - git
+        - nginx
+        - curl
