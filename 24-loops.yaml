@@ -11,4 +11,4 @@
       ansible.builtin.debug:
         msg: "Installing {{ item }}"
       loop: "{{ packages }}"
-      when: packages == "nginx"
+      when: item == "nginx"
