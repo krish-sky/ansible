@@ -2,7 +2,7 @@
   hosts: localhost
   connection: local
   vars:
-    loop: 
+    package: 
       - git
       - nginx
       - curl
@@ -11,4 +11,4 @@
     - name: installing package
       ansible.builtit.debug:
         msg: "installing {{ item }}"
-
+      loop: "{{ package }}"
