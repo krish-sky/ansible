@@ -1,6 +1,6 @@
 - name: test 36 loop with variable
   hosts: localhost
-  connection: localhost
+  connection: local
   vars:
     loop: 
       - git
@@ -11,4 +11,4 @@
     - name: installing package
       ansible.builtit.debug:
         msg: "installing {{ item }}"
-        
+
