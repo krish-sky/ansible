@@ -1,5 +1,5 @@
 - name: loops concept
-  hosts: local
+  hosts: localhost
   connection: local
   gather_facts: no
 
