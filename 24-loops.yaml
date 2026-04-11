@@ -1,15 +1,14 @@
-- name: test 34 on loops + when
+- name: test 36 loop with variable
   hosts: localhost
-  connection: local
-  become: yes
-
-  tasks:
-    - name: print the package
-      ansible.builtin.debug:
-        msg: "Installing {{ item }}"
-          
-      loop:
-        - git
-        - nginx
-        - curl
-      when: item  == "nginx" or item == "curl"
+  connection: localhost
+  vars:
+    loop: 
+      - git
+      - nginx
+      - curl
+  
+  tasks: 
+    - name: installing package
+      ansible.builtit.debug:
+        msg: "installing {{ item }}"
+        
