@@ -11,4 +11,4 @@
         - git
         - nginx
         - curl
-      when: "{{ item }} == 'nginx'"
+      when: "{{ item }} is 'nginx'"
