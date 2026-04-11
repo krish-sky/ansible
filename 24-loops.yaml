@@ -3,9 +3,9 @@
   become: yes
 
   tasks:
-    - name: installing the package
+    - name: print the package
       ansible.builtin.debug:
-        msg: "installing {{ item }}"
+        msg: "Installing {{ item }}"
           
       loop:
         - git
