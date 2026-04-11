@@ -1,5 +1,6 @@
 - name: test 34 on loops + when
   hosts: localhost
+  connection: local
   become: yes
 
   tasks:
