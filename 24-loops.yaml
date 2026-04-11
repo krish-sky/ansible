@@ -6,9 +6,9 @@
     - name: installing the package
       ansible.builtin.debug:
         msg: " installing {{ item }}"
-      when: "{{ item }} == 'nginx'"
-        
+          
       loop:
         - git
         - nginx
         - curl
+      when: "{{ item }} == 'nginx'"
