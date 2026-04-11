@@ -9,6 +9,6 @@
   tasks:
     - name: Print the nginx
       ansible.builtin.debug:
-        msg: "Installing {{ packages }}"
+        msg: "Installing {{ item }}"
       loop: "{{ packages }}"
       when: packages == "nginx"
