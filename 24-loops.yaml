@@ -6,9 +6,8 @@
   tasks:
     - name: installing the package
       ansible.builtin.debug:
-        name: " installing {{ item }}"
-        state: present
-      
+        msg: " installing {{ item }}"
+            
       loop:
         - git
         - nginx
