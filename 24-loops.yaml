@@ -6,7 +6,7 @@
   tasks:
     - name: installing the package
       ansible.builtin.debug:
-        name: " installing '{{ item }}'"
+        name: " installing {{ item }}"
         state: present
       
       loop:
