@@ -10,5 +10,5 @@
     - name: Print the nginx
       ansible.builtin.debug:
         msg: "Installing {{ packages }}"
-      when: packages == "nginx"
       loop: "{{ packages }}"
+      when: packages == "nginx"
