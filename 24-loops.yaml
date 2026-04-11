@@ -9,6 +9,6 @@
   
   tasks: 
     - name: print package
-      ansible.builtit.debug:
+      ansible.builtin.debug:
         msg: "Installing {{ item }}"
       loop: "{{ package }}"
