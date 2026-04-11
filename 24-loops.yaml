@@ -1,0 +1,7 @@
+- name: test 32 on loops
+  hosts: localhost
+  connection: local
+  become: yes
+
+  tasks:
+    - name: 
