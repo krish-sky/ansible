@@ -10,5 +10,5 @@
   tasks: 
     - name: installing package
       ansible.builtit.debug:
-        msg: "installing {{ item }}"
+        msg: "Installing {{ item }}"
       loop: "{{ package }}"
