@@ -2,7 +2,7 @@
   hosts: localhost
   connection: local
   vars:
-    myos: "Amazon"
+    myos: "RedHat"
   
   tasks:
     - name: checking os
