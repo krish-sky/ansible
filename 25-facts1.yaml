@@ -2,11 +2,11 @@
   hosts: localhost
   connection: local
   vars:
-    myos: "RedHat"
+    myos: "Amazon"
   
   tasks:
     - name: checking os 
       ansible.builtin.debug:
         msg: "{{ myos }}"
       
-      when: ansible_distribution == "myos"
+      when: ansible_distribution == myos
