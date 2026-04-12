@@ -1,10 +1,11 @@
 - name: Facts test 1
   hosts: localhost
   connection: local
-  gather_facts: "newone"
+  vars:
+    var: ansible_facts
   tasks:
     - name: print os name
       ansible.builtin.debug:
-        msg: "{{ newone }}.ansible_distribution"
+        msg: "{{ ansible_facts }}.ansible_distribution"
         
 
