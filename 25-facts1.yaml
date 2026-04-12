@@ -6,7 +6,7 @@
     - name: checking Amazon
       ansible.builtin.debug:
         msg: "This is Amazon system"
-      when: ansible_distribution == "Amazon"
+      when: ansible_distribution == "RedHat"
 
   tasks:
     - name: checking not amazon
