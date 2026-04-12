@@ -6,4 +6,4 @@
     - name: Print ansible hostname and ansible distribution
       ansible.builtin.debug:
         msg: "This is redhat Linux"
-      when: 'ansible_distribution == Redhat"'
+      when: ansible_distribution == "Redhat"
