@@ -1,0 +1,9 @@
+- name: Facts test 1
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: print os name
+      ansible.builtin.debug:
+        msg: "anisble_facts.ansible_distribution"
+        
+
