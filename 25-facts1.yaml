@@ -6,7 +6,7 @@
   
   tasks:
     - name: checking os
-      ansible,builtin.debug:
+      ansible.builtin.debug:
         msg: "System is Amazon machine"
       
       when: ansible_distribution == myos
