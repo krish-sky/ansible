@@ -1,9 +1,8 @@
-- name: Facts test 1
+- name: test facts 2
   hosts: localhost
   connection: local
+  
   tasks:
-    - name: print os name
+    - name: Print ansible hostname and ansible distribution
       ansible.builtin.debug:
-        msg: "{{ ansible_facts['distribution'] }}"
-        
-
+        msg: " ansible distribution is {{ ansible_distribution }} and ansible hostname is {{ ansible_hostname }}"
