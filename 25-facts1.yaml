@@ -1,4 +1,4 @@
-- name: test facts 9
+- name: test facts 10
   hosts: localhost
   connection: local
   vars:
@@ -9,3 +9,24 @@
       ansible.builtin.debug:
         msg: "{{ ansible_hostname }}"
       
+    - name: checking OS 
+      ansible.builtin.debug:
+        msg: "Running on target OS"
+      
+      when: ansible_distribution == myos
+
+    - name: checking OS is not redhat
+      ansible.builtin.debug:
+        msg: "Different OS detected"
+      
+      when: ansible_distribution != myos
+
+    - name: Details of hostname and os 
+      ansible.builtin.debug:
+        msg: "Hostname is {{ ansible_hostname }} and OS is {{ ansible_distribution }}"
+
+    - name: checking IP 
+      ansible.builtin.debug:
+        msg: "This looks like a cloud machine"     
+      
+      when: ip in ansible_hostname 
