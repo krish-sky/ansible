@@ -1,15 +1,12 @@
 - name: test facts 4
   hosts: localhost
   connection: local
+  vars:
+    myos: "Amazon"
   
   tasks:
-    - name: checking Amazon
+    - name: checking os 
       ansible.builtin.debug:
-        msg: "This is Amazon system"
-      when: ansible_distribution == "RedHat"
-
-  tasks:
-    - name: checking not amazon
-      ansible.builtin.debug:
-        msg: "Not Amazon system"
+        msg: "{{ myos }}"
       
+      when: ansible_distribution == "{{ myos }}"
