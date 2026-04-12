@@ -29,4 +29,4 @@
       ansible.builtin.debug:
         msg: "This looks like a cloud machine"     
       
-      when: ip in ansible_hostname 
+      when: "'ip' in ansible_hostname"
