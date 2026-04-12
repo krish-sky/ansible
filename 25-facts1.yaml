@@ -7,7 +7,7 @@
   tasks:
     - name: Name of the host
       ansible.builtin.debug:
-        msg: "{{ ansible_distribution }}"
+        msg: "{{ ansible_hostname }}"
 
     - name: checking OS
       ansible.builtin.debug:
