@@ -1,12 +1,12 @@
-- name: test facts 4
+- name: test facts 7
   hosts: localhost
   connection: local
   vars:
     myos: "RedHat"
   
   tasks:
-    - name: checking os
+    - name: {{ myos }}
       ansible.builtin.debug:
-        msg: "System is Amazon machine"
+        msg: "This is my target OS"
       
       when: ansible_distribution == myos
