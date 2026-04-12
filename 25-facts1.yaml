@@ -1,23 +1,11 @@
-- name: test facts 8
+- name: test facts 9
   hosts: localhost
   connection: local
   vars:
     myos: "RedHat"
   
   tasks:
-    - name: Name of the host
+    - name: Hostname
       ansible.builtin.debug:
         msg: "{{ ansible_hostname }}"
-
-    - name: Redhat OS
-      ansible.builtin.debug:
-        msg: "This is RedHat system"
       
-      when: ansible_distribution == myos
-
-    - name: Not Redhat
-      ansible.builtin.debug:
-        msg: "This is NOT RedHat system"
-
-      when: ansible_distribution != myos
-
