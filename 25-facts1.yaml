@@ -1,9 +1,16 @@
-- name: test facts 2
+- name: test facts 4
   hosts: localhost
   connection: local
   
   tasks:
     - name: checking ansible distribution
       ansible.builtin.debug:
-        msg: "This is redhat Linux"
-      when: ansible_distribution == "RedHat"
+        msg: "This is Amazon system"
+      when: ansible_distribution == "Amazon"
+
+  tasks:
+    - name: checking ansible distribution
+      ansible.builtin.debug:
+        msg: "Not Amazon system"
+      
+      when: ansible_distribution != "Amazon"
