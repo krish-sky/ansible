@@ -5,8 +5,8 @@
     myos: "Amazon"
   
   tasks:
-    - name: checking os 
-      ansible.builtin.debug:
-        msg: "{{ myos }}"
+    - name: checking os
+      ansible,builtin.debug:
+        msg: "System is Amazon machine"
       
       when: ansible_distribution == myos
