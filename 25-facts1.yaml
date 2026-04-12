@@ -3,7 +3,7 @@
   connection: local
   
   tasks:
-    - name: Print ansible hostname and ansible distribution
+    - name: checking ansible distribution
       ansible.builtin.debug:
         msg: "This is redhat Linux"
-      when: ansible_distribution == "Redhat"
+      when: ansible_distribution == "RedHat"
