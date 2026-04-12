@@ -1,4 +1,4 @@
-- name: test facts 7
+- name: test facts 8
   hosts: localhost
   connection: local
   vars:
@@ -9,8 +9,15 @@
       ansible.builtin.debug:
         msg: "{{ ansible_hostname }}"
 
-    - name: checking OS
+    - name: Redhat OS
       ansible.builtin.debug:
-        msg: "This is my target OS"
+        msg: "This is RedHat system"
       
       when: ansible_distribution == myos
+
+    - name: Not Redhat
+      ansible.builtin.debug:
+        msg: "This is NOT RedHat system"
+
+      when: ansible_distribution != myos
+
