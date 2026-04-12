@@ -5,4 +5,5 @@
   tasks:
     - name: Print ansible hostname and ansible distribution
       ansible.builtin.debug:
-        msg: " ansible distribution is {{ ansible_distribution }} and ansible hostname is {{ ansible_hostname }}"
+        msg: "This is Amazon Linux"
+      when: {{ ansible_distribution == 'Redhat' }}
