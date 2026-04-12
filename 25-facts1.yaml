@@ -9,4 +9,4 @@
       ansible.builtin.debug:
         msg: "{{ myos }}"
       
-      when: ansible_distribution == "{{ myos }}"
+      when: ansible_distribution == "myos"
