@@ -6,6 +6,6 @@
   tasks:
     - name: print os name
       ansible.builtin.debug:
-        msg: "{{ ansible_facts }}.ansible_distribution"
+        msg: "{{ ansible_facts.ansible_distribution }}"
         
 
