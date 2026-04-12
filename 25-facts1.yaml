@@ -5,7 +5,11 @@
     myos: "RedHat"
   
   tasks:
-    - name: "{{ myos }}"
+    - name: Name of the host
+      ansible.builtin.debug:
+        msg: "ansible_distribution"
+
+    - name: checking OS
       ansible.builtin.debug:
         msg: "This is my target OS"
       
