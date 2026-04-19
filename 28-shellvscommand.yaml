@@ -1,0 +1,11 @@
+- name: learning shell vs command
+  hosts: localhost
+  connection: local
+
+  tasks: 
+    - name: checking Date
+      ansible.builtin.command: date
+      register: output
+
+      ansible.builtin.debug:
+        msg: "{{ output.stdout }}"

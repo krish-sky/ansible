@@ -1,0 +1,26 @@
+- name: Generate application config from template
+  hosts: localhost
+  connection: local
+  
+  tasks:
+    - name: Render configuration file using template
+      ansible.builtin.template:
+        src: app.conf.j2
+        dest: "{{ item.dest }}"
+      
+      vars:
+        port: "{{ item.port }}"
+        env: "{{ item.env }}"
+      
+      loop: 
+        - dest: "/tmp/app_dev.conf"
+          port: 8081
+          env: dev 
+
+        - dest: "/tmp/app_stage.conf"
+          port: 8082
+          env: app_stage
+
+        - dest: "/tmp/app_prod.conf"
+          port: 8080
+          env: pro

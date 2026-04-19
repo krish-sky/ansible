@@ -1,0 +1,17 @@
+- name: long listinig 
+  hosts: localhost
+  connection: local
+
+  tasks: 
+    - name: list the content
+      ansible.builtin.command: ls -l
+      register: ls_output
+
+    - name: print env variable
+      ansible.builtin.shell: echo $HOME
+      register: env_varible_output
+
+    - name: printing outputs of two tasks
+      ansible.builtin.debug:
+        msg: "{{ ls_output }}
+              {{ env_varible_output}}"

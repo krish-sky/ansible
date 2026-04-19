@@ -1,0 +1,11 @@
+- name: new lines will be at bottom of the file
+  hosts: localhost
+  connection: local
+  
+  tasks: 
+    - name: ensure text is at bottom
+      ansible.builtin.lineinfile:
+      path: /tmp/app.txt
+      line: "MAX_CONN=100"
+      insertafter: 'PORT='
+    
