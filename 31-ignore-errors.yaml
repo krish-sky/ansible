@@ -2,19 +2,24 @@
   hosts: localhost
   connection: local
   tasks:
-    - name: Attempting to list a directory which doesnot existent
-      ansible.builtin.command: ls testdir
-      register: result1
-      ignore_errors: yes
+    # - name: Attempting to list a directory which doesnot existent
+    #   ansible.builtin.command: ls testdir
+    #   register: result1
+    #   ignore_errors: yes
 
-    - name: confirm execution continues
-      ansible.builtin.debug:
-        msg:  "Execution did not stop"
+    # - name: confirm execution continues
+    #   ansible.builtin.debug:
+    #     msg:  "Execution did not stop"
     
-    - name: Print the output of the non existing directory
-      ansible.builtin.debug:
-        msg: "{{ result1.stderr }}"
+    # - name: Print the output of the non existing directory
+    #   ansible.builtin.debug:
+    #     msg: "{{ result1.stderr }}"
     
-    - name: Print1212121 the output of the non existing directory
-      ansible.builtin.debug:
-        msg: "{{ result1.stdout }}"
+    # - name: Print1212121 the output of the non existing directory
+    #   ansible.builtin.debug:
+    #     msg: "{{ result1.stdout }}"
+
+    - name: force failure
+      ansible.builtin.command: echo Hello 
+      register: result1
+      failed_when: result1.stdout == "Hell world"
