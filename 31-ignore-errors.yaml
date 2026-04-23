@@ -17,4 +17,4 @@
     
     - name: Print the output of the non existing directory
       ansible.builtin.debug:
-        msg: "{{ result1.std.out }}"
+        msg: "{{ result1.stdout }}"
