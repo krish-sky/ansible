@@ -19,7 +19,12 @@
     #   ansible.builtin.debug:
     #     msg: "{{ result1.stdout }}"
 
-    - name: force failure
-      ansible.builtin.command: eccho "hello"
-      register: result1
-      failed_when: result1.stdout == "Hell world"
+    # - name: force failure
+    #   ansible.builtin.command: echo "hello"
+    #   register: result1
+    #   failed_when: result1.stdout == "hello"
+
+    - name: Check if file is empty
+      ansible.builtin.command: cat myfile.txt
+      register: file_result
+      failed_when: file_result.stdout == 
