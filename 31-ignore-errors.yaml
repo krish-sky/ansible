@@ -1,0 +1,16 @@
+- name: demo on ignore erros
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Attempting to list a directory which doesnot existent
+      ansible.builtin.command: ls testdir
+      register: result1
+      ignore_errors: yes
+
+    - name: confirm execution continues
+      ansible.builtin.debug:
+        msg:  "Execution did not stop"
+    
+    - name: Print the output of the non existing directory
+      ansible.builtin.debug:
+        msg: "{{ result1.stderr }}"
