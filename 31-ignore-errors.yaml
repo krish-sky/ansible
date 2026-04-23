@@ -25,6 +25,6 @@
     #   failed_when: result1.stdout == "hello"
 
     - name: Check if file is empty
-      ansible.builtin.command: cat myfile.txt
+      ansible.builtin.command: echo "sorry its failed" > myfile.txt
       register: file_result
       failed_when: file_result.stdout == "sorry its failed" 
