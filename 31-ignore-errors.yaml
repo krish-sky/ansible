@@ -20,6 +20,6 @@
     #     msg: "{{ result1.stdout }}"
 
     - name: force failure
-      ansible.builtin.command: echo "Hello"
+      ansible.builtin.command: eccho "hello"
       register: result1
       failed_when: result1.stdout == "Hell world"
