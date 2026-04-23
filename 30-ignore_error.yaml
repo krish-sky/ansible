@@ -1,0 +1,12 @@
+- name: demo on ingore erros
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Attempt to list non-existent directory
+      ansible.builtin.command: ls testdir
+      register: result1
+      ingore_errors: yes
+
+    - name: prints the output of the non_existing directory
+      ansible.builtin.debug:
+        msg: "{{ result1 }}"
