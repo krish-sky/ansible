@@ -24,7 +24,11 @@
     #   register: result1
     #   failed_when: result1.stdout == "hello"
 
-    - name: Check if file is empty
-      ansible.builtin.command: cat myfile.txt
-      register: file_result
-      failed_when: file_result.stdout == "sorry its failed" 
+    # - name: Check if file is empty
+    #   ansible.builtin.command: cat myfile.txt
+    #   register: file_result
+    #   failed_when: file_result.stdout == "sorry its failed" 
+
+    - name: learning changed_when 
+      ansible.builtin.command: echo hello
+      changed_when: false
