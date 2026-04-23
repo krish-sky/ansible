@@ -7,6 +7,6 @@
       register: result1
       ignore_errors: yes
 
-    - name: prints the output of the non_existing directory
+    - name: Confirm execution continues
       ansible.builtin.debug:
-        msg: "{{ result1 }}"
+        msg: "Execution continued after failure"
