@@ -57,6 +57,15 @@
     #     path: /tmp/perm_test.txt
     #     mode: "0644"
 
-    - name: run command but mark no change
+    # - name: run command but mark no change
+    #   ansible.builtin.command: echo "hello"
+    #   changed_when: false
+
+    - name: run command and register output
       ansible.builtin.command: echo "hello"
-      changed_when: false
+      register: result
+
+    - name: mark changed only if output is "hello"
+      ansible.builtin.debug:
+        msg: "checking output"
+      changed_when: result.stdout == "hello"
