@@ -26,11 +26,16 @@
     #     dest: /tmp/idem_file.txt
     #     force: false         # key: skip if file already exists
 
-    - name: check if the file existent
-      ansible.builtin.stat:
-        path: /tmp/idem_file2.txt
-      register: file_check
+    # - name: check if the file existent
+    #   ansible.builtin.stat:
+    #     path: /tmp/idem_file2.txt
+    #   register: file_check
 
-    - name: create a file only if missing
-      ansible.builtin.command: touch /tmp/idem_file2.txt
-      when: not file_check.stat.exists
+    # - name: create a file only if missing
+    #   ansible.builtin.command: touch /tmp/idem_file2.txt
+    #   when: not file_check.stat.exists
+
+    - name: write random content (break idempotency)
+      ansible.builtin.copy:
+        content: "{{ 100 | random }}"
+        dest: /tmp/random.txt
