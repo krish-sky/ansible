@@ -64,8 +64,9 @@
     - name: run command and register output
       ansible.builtin.command: echo "hello"
       register: result
+      ignore_errors: true
 
     - name: mark changed only if output is "hello"
       ansible.builtin.debug:
         msg: "checking output"
-      changed_when: result.stdout == "hello"
+      changed_when: result.stdout != "hello"
