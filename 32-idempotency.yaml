@@ -1,0 +1,7 @@
+- name: demo on Idempotency
+  hosts: localhost
+  connection: local
+  become: false
+  tasks:
+    - name: create file using command (bad way)
+      ansible.builtin.command: touch /tmp/idem_test.txt
