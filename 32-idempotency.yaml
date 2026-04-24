@@ -29,9 +29,8 @@
     - name: check if the file existent
       ansible.builtin.stat:
         path: /tmp/idem_file2.txt
-        register: file_check
+      register: file_check
 
     - name: create a file only if missing
       ansible.builtin.commad: touch /tmp/idem_file2
       when: not file_check.stat.exists
-      
