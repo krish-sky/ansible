@@ -61,12 +61,13 @@
     #   ansible.builtin.command: echo "hello"
     #   changed_when: false
 
-    - name: run command and register output
-      ansible.builtin.command: echo "hello"
+    - name: check file content
+      ansible.builtin.command: cat /tmp/check.txt
       register: result
       ignore_errors: true
 
-    - name: mark changed only if output is "hello"
-      ansible.builtin.debug:
-        msg: "checking output"
-      changed_when: result.stdout != "hello"
+    - name: write only if not correct
+      ansible.builtin.copy:
+        content: "hello"
+        dest: /tmp/check.txt
+      when: result.stdout != "hello"
