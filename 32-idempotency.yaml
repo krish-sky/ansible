@@ -65,6 +65,7 @@
       ansible.builtin.command: cat /tmp/check.txt
       register: result
       ignore_errors: true
+      changed_when: false
 
     - name: write only if not correct
       ansible.builtin.copy:
