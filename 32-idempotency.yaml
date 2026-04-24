@@ -20,8 +20,18 @@
     #     access_time: preserve         # don't update atime if file exists
 
    
-    - name: create empty file idempotently
-      ansible.builtin.copy:
-        content: ""          # empty file
-        dest: /tmp/idem_file.txt
-        force: false         # key: skip if file already exists
+    # - name: create empty file idempotently
+    #   ansible.builtin.copy:
+    #     content: ""          # empty file
+    #     dest: /tmp/idem_file.txt
+    #     force: false         # key: skip if file already exists
+
+    - name: check if the file existent
+      ansible.builtin.stat:
+        path: /tmp/idem_file2.txt
+        register: file_check
+
+    - name: create a file only if missing
+      ansible.builtin.commad: touch /tmp/idem_file2
+      when: not file_check.stat.exists
+      
