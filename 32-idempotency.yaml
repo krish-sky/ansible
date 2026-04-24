@@ -41,8 +41,18 @@
     #     dest: /tmp/random.txt
 
 
-    - name: ensure file with permission
-      ansible.builtin.file:
-        path: /tmp/perm_test.txt
-        state: file
-        mode: "0644"
+    # - name: ensure file with permission
+    #   ansible.builtin.file:
+    #     path: /tmp/perm_test.txt
+    #     state: file
+    #     mode: "0644"
+
+    - name: create file safely
+  ansible.builtin.copy:
+    content: "hello"
+    dest: /tmp/perm_test.txt
+
+- name: ensure permission
+  ansible.builtin.file:
+    path: /tmp/perm_test.txt
+    mode: "0644"
