@@ -12,9 +12,16 @@
     #     path: /tmp/idem_test.txt
     #     state: touch # touch should not be used due to the it always create IF NOT exists OR update timestamp IF exists
 
-    - name: create file using file module (good way)
-      ansible.builtin.file:
-        path: /tmp/idem_file.txt
-        state: file
-        modification_time: preserve   # don't update mtime if file exists
-        access_time: preserve         # don't update atime if file exists
+    # - name: create file using file module (good way)
+    #   ansible.builtin.file:
+    #     path: /tmp/idem_file.txt
+    #     state: file
+    #     modification_time: preserve   # don't update mtime if file exists
+    #     access_time: preserve         # don't update atime if file exists
+
+   
+    - name: create empty file idempotently
+      ansible.builtin.copy:
+        content: ""          # empty file
+        dest: /tmp/idem_file.txt
+        force: false         # key: skip if file already exists
