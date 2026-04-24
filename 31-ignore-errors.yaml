@@ -32,3 +32,16 @@
     - name: learning changed_when 
       ansible.builtin.command: echo hello
       changed_when: false
+      
+    - block:
+        - name: learning block
+          ansible.builtin.command: ls testdir
+    
+      rescue:
+        - name: handle failure
+          ansible.builtin.debug:
+            msg: "Block failed"
+      always:
+        -name: running always
+        ansible.builtin.debug:
+          msg: "thank you"
