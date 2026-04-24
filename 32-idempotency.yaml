@@ -16,3 +16,5 @@
       ansible.builtin.file:
         path: /tmp/idem_file.txt
         state: file
+        modification_time: preserve   # don't update mtime if file exists
+        access_time: preserve         # don't update atime if file exists
