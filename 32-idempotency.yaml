@@ -35,7 +35,14 @@
     #   ansible.builtin.command: touch /tmp/idem_file2.txt
     #   when: not file_check.stat.exists
 
-    - name: write random content (break idempotency)
-      ansible.builtin.copy:
-        content: "{{ 100 | random }}"
-        dest: /tmp/random.txt
+    # - name: write random content (break idempotency)
+    #   ansible.builtin.copy:
+    #     content: "{{ 100 | random }}"
+    #     dest: /tmp/random.txt
+
+
+    - name: ensure file with permission
+      ansible.builtin.file:
+        path: /tmp/perm_test.txt
+        state: file
+        mode: "0644"
